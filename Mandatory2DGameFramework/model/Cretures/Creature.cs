@@ -16,29 +16,64 @@ namespace Mandatory2DGameFramework.model.Cretures
 
 
         // allow multiple defence items but only one attack item
-        public AttackItem? Attack { get; set; }
-        public List<DefenceItem> Defence { get; set; }
+        public AttackItem? Weapon { get; set; }
+        public List<IDefenceItem> Defence { get; set; }
 
         public Creature()
         {
             Name = string.Empty; 
             HitPoint = 100; // default hit points
 
-            Attack = null; // allow no attack item by default
-            Defence = new List<DefenceItem>(); // enable multiple defence items
+            Weapon = null; // allow no attack item by default
+            Defence = new List<IDefenceItem>(); 
 
         }
 
+        public void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null)
+        {
+            int damage = Hit();
+
+            if (opponent != null && damage > 0)
+                opponent.ReceiveHit(damage);
+
+            if (lootObj != null)
+                Loot(lootObj);
+        }
+
         protected abstract int Hit();
+        protected virtual void ReceiveHit(int hit)
+        {
+            int totalDefence = Defence.Sum(d => d.GetReduceHitPoint());
+            int damage = hit - totalDefence;
+            if (damage > 0)
+            {
+                HitPoint -= damage;
+                if (HitPoint < 0)
+                    HitPoint = 0;
+            }
+        }
+        protected virtual void Loot(WorldObject obj)
+        {
+            if (obj == null) return;
 
-        protected abstract void ReceiveHit(int hit);
-
-        protected abstract void Loot(WorldObject obj);
+            if (obj is IDefenceItem defenceItem)
+            {
+                Defence.Add(defenceItem);
+                obj.Lootable = false; // mark as looted
+                obj.Removeable = true; // mark as removable
+            }
+            else if (obj is AttackItem attackItem)
+            {
+                Weapon = attackItem;
+                obj.Lootable = false; 
+                obj.Removeable = true;
+            }
+        }
 
 
         public override string ToString()
         {
-            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Attack)}={Attack}, {nameof(Defence)}={Defence}}}";
+            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
         }
     }
 }

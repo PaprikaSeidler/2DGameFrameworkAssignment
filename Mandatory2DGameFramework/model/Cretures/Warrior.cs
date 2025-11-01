@@ -9,16 +9,13 @@ namespace Mandatory2DGameFramework.model.Cretures
 {
     public class Warrior : Creature
     {
-        protected override int Hit();
-
-        protected override void Loot(WorldObject obj)
+        protected override int Hit()
         {
-            throw new NotImplementedException();
-        }
-
-        protected override void ReceiveHit(int hit)
-        {
-            throw new NotImplementedException();
+            const int unarmedHit = 2;
+            if (Weapon != null)
+                return Weapon.Hit;
+            else
+                return unarmedHit;
         }
     }
 }
