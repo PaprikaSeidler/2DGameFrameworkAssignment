@@ -1,4 +1,5 @@
-﻿using Mandatory2DGameFramework.model.attack;
+﻿using Mandatory2DGameFramework.Logger;
+using Mandatory2DGameFramework.model.attack;
 using Mandatory2DGameFramework.model.defence;
 using Mandatory2DGameFramework.worlds;
 using System;
@@ -9,8 +10,10 @@ using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.model.Cretures
 {
-    public abstract class Creature
+    public abstract class Creature : IObservable<IHitObserver>
     {
+        private readonly List<IHitObserver> _hitObservers = new();
+
         public string Name { get; set; }
         public int HitPoint { get; set; }
 
@@ -51,6 +54,7 @@ namespace Mandatory2DGameFramework.model.Cretures
                 if (HitPoint < 0)
                     HitPoint = 0;
             }
+            NotifyHitObservers(damage);
         }
         protected virtual void Loot(WorldObject obj)
         {
@@ -75,5 +79,33 @@ namespace Mandatory2DGameFramework.model.Cretures
         {
             return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
         }
+
+        public void AddObserver(IHitObserver observer)
+        {
+            _hitObservers.Add(observer);
+        }
+
+        public void RemoveObserver(IHitObserver observer)
+        {
+            _hitObservers.Remove(observer);
+        }
+
+        protected void NotifyHitObservers(int damage)
+        {
+            try
+            {
+                foreach (var observer in _hitObservers)
+                {
+                    //observer.OnHit(damage);
+                    observer.OnHit(damage, this.HitPoint);
+                }
+            }
+            catch (Exception ex)
+            {
+                MyLogger.Instance.LogError("Error notifying hit observers: " + ex.Message);
+            }
+
+        }
+
     }
 }
