@@ -1,6 +1,6 @@
-﻿using Mandatory2DGameFramework.Logger;
+﻿using Mandatory2DGameFramework.Interfaces;
+using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.model.attack;
-using Mandatory2DGameFramework.model.defence;
 using Mandatory2DGameFramework.worlds;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.model.Cretures
 {
-    public abstract class Creature : IObservable<IHitObserver>
+    public abstract class Creature : IObserverable<IHitObserver>
     {
         private readonly List<IHitObserver> _hitObservers = new();
 

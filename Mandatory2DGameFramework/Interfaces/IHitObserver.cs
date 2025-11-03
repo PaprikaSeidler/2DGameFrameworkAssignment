@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mandatory2DGameFramework.model.defence
+namespace Mandatory2DGameFramework.Interfaces
 {
-    public interface IDefenceItem
+    public interface IHitObserver
     {
-        int GetReduceHitPoint();
+        void OnHit(int damageTaken, int currentHP);
     }
 }

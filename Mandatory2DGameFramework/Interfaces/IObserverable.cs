@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mandatory2DGameFramework.model.Cretures
+namespace Mandatory2DGameFramework.Interfaces
 {
-    public interface IObservable<T>
+    public interface IObserverable<T>
     {
         void AddObserver(T observer);
         void RemoveObserver(T observer);
