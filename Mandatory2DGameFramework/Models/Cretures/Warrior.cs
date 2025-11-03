@@ -11,11 +11,7 @@ namespace Mandatory2DGameFramework.model.Cretures
     {
         protected override int Hit()
         {
-            const int unarmedHit = 2;
-            if (Weapon != null)
-                return Weapon.Hit;
-            else
-                return unarmedHit;
+            return Weapon.DealDamage();
         }
     }
 }

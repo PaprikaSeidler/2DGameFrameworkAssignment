@@ -1,4 +1,5 @@
-﻿using Mandatory2DGameFramework.worlds;
+﻿using Mandatory2DGameFramework.Interfaces;
+using Mandatory2DGameFramework.worlds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.model.attack
 {
-    public class AttackItem : WorldObject
+    public class AttackItem : WorldObject, IAttackItem
     {
         public string  Name { get; set; }
         public int Hit { get; set; }
@@ -23,6 +24,11 @@ namespace Mandatory2DGameFramework.model.attack
         public override string ToString()
         {
             return $"{{{nameof(Name)}={Name}, {nameof(Hit)}={Hit.ToString()}, {nameof(Range)}={Range.ToString()}}}";
+        }
+
+        public int DealDamage()
+        {
+            return Hit;
         }
     }
 }

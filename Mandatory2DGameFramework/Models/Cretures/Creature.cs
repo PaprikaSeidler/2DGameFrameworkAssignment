@@ -1,12 +1,10 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.Logger;
-using Mandatory2DGameFramework.model.attack;
+using Mandatory2DGameFramework.Models.attack;
+using Mandatory2DGameFramework.Models.Cretures.States;
 using Mandatory2DGameFramework.worlds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace Mandatory2DGameFramework.model.Cretures
 {
@@ -19,84 +17,54 @@ namespace Mandatory2DGameFramework.model.Cretures
 
 
         // allow multiple defence items but only one attack item
-        public AttackItem? Weapon { get; set; }
+        public IAttackItem? Weapon { get; set; }
         public List<IDefenceItem> Defence { get; set; }
 
-        public Creature()
+        public ILootStrategy? LootStrategy { get; set; }
+        public ICreatureState CurrentState { get; set; }
+
+        public Creature(String name)
         {
-            Name = string.Empty; 
-            HitPoint = 100; // default hit points
+            Name = name;
+            HitPoint = 100; 
 
-            Weapon = null; // allow no attack item by default
-            Defence = new List<IDefenceItem>(); 
-
+            Defence = new List<IDefenceItem>();
+            Weapon = new Unarmed(); // default weapon
+            CurrentState = new AliveState();
         }
 
         public void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null)
         {
-            int damage = Hit();
-
-            if (opponent != null && damage > 0)
-                opponent.ReceiveHit(damage);
-
-            if (lootObj != null)
-                Loot(lootObj);
+            CurrentState.TakeTurn(this, opponent, lootObj);
         }
 
-        protected abstract int Hit();
-        protected virtual void ReceiveHit(int hit)
+        public abstract int Hit(); 
+
+        public virtual void ReceiveHit(int hit)
         {
-            int totalDefence = Defence.Sum(d => d.GetReduceHitPoint());
-            int damage = hit - totalDefence;
-            if (damage > 0)
-            {
-                HitPoint -= damage;
-                if (HitPoint < 0)
-                    HitPoint = 0;
-            }
-            NotifyHitObservers(damage);
+            CurrentState.ReceiveHit(this, hit);
         }
-        protected virtual void Loot(WorldObject obj)
+
+        public virtual void Loot(WorldObject obj)
         {
-            if (obj == null) return;
-
-            if (obj is IDefenceItem defenceItem)
-            {
-                Defence.Add(defenceItem);
-                obj.Lootable = false; // mark as looted
-                obj.Removeable = true; // mark as removable
-            }
-            else if (obj is AttackItem attackItem)
-            {
-                Weapon = attackItem;
-                obj.Lootable = false; 
-                obj.Removeable = true;
-            }
+            CurrentState.Loot(this, obj);
         }
-
 
         public override string ToString()
         {
             return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
         }
 
-        public void AddObserver(IHitObserver observer)
-        {
-            _hitObservers.Add(observer);
-        }
+        public void AddObserver(IHitObserver observer) => _hitObservers.Add(observer);
+        public void RemoveObserver(IHitObserver observer) => _hitObservers.Remove(observer);
 
-        public void RemoveObserver(IHitObserver observer)
-        {
-            _hitObservers.Remove(observer);
-        }
 
-        protected void NotifyHitObservers(int damage)
+        public void NotifyHitObservers(int damage)
         {
             try
             {
                 foreach (var observer in _hitObservers)
                 {
-                    //observer.OnHit(damage);
                     observer.OnHit(damage, this.HitPoint);
                 }
             }
