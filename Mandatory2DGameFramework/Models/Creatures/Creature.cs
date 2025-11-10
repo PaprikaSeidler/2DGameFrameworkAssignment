@@ -1,14 +1,15 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.Models.attack;
-using Mandatory2DGameFramework.Models.Cretures.States;
 using Mandatory2DGameFramework.worlds;
+using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
 
 
 
 namespace Mandatory2DGameFramework.model.Cretures
 {
-    public abstract class Creature : IObserverable<IHitObserver>
+    public abstract class Creature : ICreature, IObserverable<IHitObserver>
     {
         private readonly List<IHitObserver> _hitObservers = new();
 
@@ -21,44 +22,58 @@ namespace Mandatory2DGameFramework.model.Cretures
         public List<IDefenceItem> Defence { get; set; }
 
         public ILootStrategy? LootStrategy { get; set; }
-        public ICreatureState CurrentState { get; set; }
 
-        public Creature(String name)
+        public Creature()
         {
-            Name = name;
+            Name = string.Empty;
             HitPoint = 100; 
 
             Defence = new List<IDefenceItem>();
             Weapon = new Unarmed(); // default weapon
-            CurrentState = new AliveState();
         }
 
+
+        /// <summary>
+        /// Take turn for the creature
+        /// </summary> 
+        /// <param name="opponent">deal damage to this creature</param>
+        /// <param name="lootObj">loot this object</param>
         public void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null)
         {
-            CurrentState.TakeTurn(this, opponent, lootObj);
+            int damage = Hit();
+            if (opponent != null)
+            {
+                opponent.ReceiveHit(damage);
+            }
+            if (lootObj != null && lootObj.Lootable)
+            {
+                Loot(lootObj);
+            }
         }
 
-        public abstract int Hit(); 
+        protected abstract int Hit();
 
-        public virtual void ReceiveHit(int hit)
+        protected virtual void ReceiveHit(int hit)
         {
-            CurrentState.ReceiveHit(this, hit);
+            int totalDefence = Defence.Sum(d => d.GetReduceHitPoint());
+            int totalDamage = Math.Max(0, hit - totalDefence);
+            HitPoint -= totalDamage;
+            if (HitPoint <= 0)
+            {
+                HitPoint = 0;
+            }
+            NotifyHitObservers(totalDamage);
         }
 
-        public virtual void Loot(WorldObject obj)
+        protected virtual void Loot(WorldObject obj)
         {
-            CurrentState.Loot(this, obj);
+            LootStrategy?.Loot(this, obj);
         }
 
-        public override string ToString()
-        {
-            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
-        }
+
 
         public void AddObserver(IHitObserver observer) => _hitObservers.Add(observer);
         public void RemoveObserver(IHitObserver observer) => _hitObservers.Remove(observer);
-
-
         public void NotifyHitObservers(int damage)
         {
             try
@@ -73,6 +88,12 @@ namespace Mandatory2DGameFramework.model.Cretures
                 MyLogger.Instance.LogError("Error notifying hit observers: " + ex.Message);
             }
 
+        }
+        
+        
+        public override string ToString()
+        {
+            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
         }
 
     }

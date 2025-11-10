@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.Interfaces
 {
-    public interface IAttackItem
+    public interface IFactory<T>
     {
-        string Name { get; }
-        int Hit { get; }
-        int Range { get; }
-
-        int DealDamage();
+        T Create();
     }
 }

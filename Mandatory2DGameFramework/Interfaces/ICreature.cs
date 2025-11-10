@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.Interfaces
 {
-    public interface IAttackItem
+    public interface ICreature
     {
         string Name { get; }
-        int Hit { get; }
-        int Range { get; }
-
-        int DealDamage();
+        int HitPoint { get; }
+        IAttackItem? Weapon { get; set; }
+        List<IDefenceItem> Defence { get; }  
+        ILootStrategy? LootStrategy { get; set; }
     }
 }

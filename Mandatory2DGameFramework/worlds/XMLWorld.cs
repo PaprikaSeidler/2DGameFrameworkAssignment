@@ -10,11 +10,25 @@ namespace Mandatory2DGameFramework.worlds
 {
     public class XMLWorld
     {
+        /// <summary>
+        /// Gets the maximum X-coordinate value from XML.
+        /// </summary>
         public int MaxX { get; private set; }
+        /// <summary>
+        /// Gets the maximum Y-coordinate value from XML.
+        /// </summary>
         public int MaxY { get; private set; }
+        /// <summary>
+        /// Gets the difficulty level of the current context from XML.
+        /// </summary>
         public string Difficulty { get; private set; }
 
-
+        /// <summary>
+        /// Reads world configuration from an XML file and initializes properties.
+        /// If any required node is missing, logs an error and throws an exception.
+        /// </summary>
+        /// <param name="configFilePath">Your filepath</param>
+        /// <exception cref="Exception"></exception>
         public XMLWorld(string configFilePath)
         {
             XmlDocument doc = new XmlDocument();
