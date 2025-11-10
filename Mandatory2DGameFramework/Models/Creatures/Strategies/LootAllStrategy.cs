@@ -1,13 +1,7 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
-using Mandatory2DGameFramework.model.attack;
-using Mandatory2DGameFramework.model.Cretures;
-using Mandatory2DGameFramework.model.defence;
+using Mandatory2DGameFramework.Models.Attack;
+using Mandatory2DGameFramework.Models.defence;
 using Mandatory2DGameFramework.worlds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mandatory2DGameFramework.Models.Cretures.Strategies
 {

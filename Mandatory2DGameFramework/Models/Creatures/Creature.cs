@@ -1,13 +1,10 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.Logger;
-using Mandatory2DGameFramework.Models.attack;
+using Mandatory2DGameFramework.Models.Attack;
 using Mandatory2DGameFramework.worlds;
-using System.Xml;
-using static System.Net.Mime.MediaTypeNames;
 
 
-
-namespace Mandatory2DGameFramework.model.Cretures
+namespace Mandatory2DGameFramework.Models.Cretures
 {
     public abstract class Creature : ICreature, IObserverable<IHitObserver>
     {

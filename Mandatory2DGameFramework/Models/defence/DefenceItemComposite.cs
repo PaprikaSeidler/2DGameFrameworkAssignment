@@ -1,11 +1,6 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mandatory2DGameFramework.model.defence
+namespace Mandatory2DGameFramework.Models.defence
 {
     public class DefenceItemComposite : IDefenceItem
     {

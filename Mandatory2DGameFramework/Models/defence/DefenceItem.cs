@@ -1,12 +1,7 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.worlds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mandatory2DGameFramework.model.defence
+namespace Mandatory2DGameFramework.Models.defence
 {
     /// <summary>
     /// Defence item that can reduce hit points from attacks. Inherits from WorldObject.

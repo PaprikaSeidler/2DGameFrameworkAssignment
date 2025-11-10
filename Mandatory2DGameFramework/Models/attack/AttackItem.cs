@@ -1,12 +1,7 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.worlds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mandatory2DGameFramework.model.attack
+namespace Mandatory2DGameFramework.Models.Attack
 {
     public class AttackItem : WorldObject, IAttackItem
     {

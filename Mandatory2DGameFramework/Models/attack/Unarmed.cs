@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mandatory2DGameFramework.Interfaces;
+﻿using Mandatory2DGameFramework.Interfaces;
 
-namespace Mandatory2DGameFramework.Models.attack
+namespace Mandatory2DGameFramework.Models.Attack
 {
     public class Unarmed : IAttackItem
     {

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mandatory2DGameFramework.Interfaces;
+﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.Logger;
-using Mandatory2DGameFramework.model.Cretures;
 
 
-namespace Mandatory2DGameFramework.Factories
+
+namespace Mandatory2DGameFramework.Factory
 {
     public class GameFactory<T> : IFactory<T>
     {
