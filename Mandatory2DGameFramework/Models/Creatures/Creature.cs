@@ -1,14 +1,15 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
 using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.Models.Attack;
+using Mandatory2DGameFramework.Models.Creatures.Observer;
 using Mandatory2DGameFramework.worlds;
 
 
-namespace Mandatory2DGameFramework.Models.Cretures
+namespace Mandatory2DGameFramework.Models.Creatures
 {
-    public abstract class Creature : ICreature, IObserverable<IHitObserver>
+    public abstract class Creature : WorldObject, ICreature
     {
-        private readonly List<IHitObserver> _hitObservers = new();
+        private readonly HitNotifier _notifier;
 
         public string Name { get; set; }
         public int HitPoint { get; set; }
@@ -20,13 +21,15 @@ namespace Mandatory2DGameFramework.Models.Cretures
 
         public ILootStrategy? LootStrategy { get; set; }
 
-        public Creature()
+        public Creature(HitNotifier notifier)
         {
             Name = string.Empty;
             HitPoint = 100; 
 
             Defence = new List<IDefenceItem>();
             Weapon = new Unarmed(); // default weapon
+
+            _notifier = notifier;
         }
 
 
@@ -59,32 +62,12 @@ namespace Mandatory2DGameFramework.Models.Cretures
             {
                 HitPoint = 0;
             }
-            NotifyHitObservers(totalDamage);
+            _notifier.Notify(totalDamage, HitPoint);
         }
 
         protected virtual void Loot(WorldObject obj)
         {
             LootStrategy?.Loot(this, obj);
-        }
-
-
-
-        public void AddObserver(IHitObserver observer) => _hitObservers.Add(observer);
-        public void RemoveObserver(IHitObserver observer) => _hitObservers.Remove(observer);
-        public void NotifyHitObservers(int damage)
-        {
-            try
-            {
-                foreach (var observer in _hitObservers)
-                {
-                    observer.OnHit(damage, this.HitPoint);
-                }
-            }
-            catch (Exception ex)
-            {
-                MyLogger.Instance.LogError("Error notifying hit observers: " + ex.Message);
-            }
-
         }
         
         

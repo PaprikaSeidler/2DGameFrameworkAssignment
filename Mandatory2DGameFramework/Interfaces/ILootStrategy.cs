@@ -1,4 +1,4 @@
-﻿using Mandatory2DGameFramework.Models.Cretures;
+﻿using Mandatory2DGameFramework.Models.Creatures;
 using Mandatory2DGameFramework.worlds;
 
 namespace Mandatory2DGameFramework.Interfaces

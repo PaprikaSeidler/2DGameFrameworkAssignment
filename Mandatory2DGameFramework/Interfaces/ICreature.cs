@@ -1,13 +1,12 @@
-﻿
+﻿using Mandatory2DGameFramework.worlds;
 
 namespace Mandatory2DGameFramework.Interfaces
 {
     public interface ICreature
     {
-        string Name { get; }
-        int HitPoint { get; }
-        IAttackItem? Weapon { get; set; }
-        List<IDefenceItem> Defence { get; }  
-        ILootStrategy? LootStrategy { get; set; }
+        void TakeTurn(ICreature? opponent = null, WorldObject? lootObj = null);
+        int Hit();
+        void ReceiveHit(int hit);
+        void Loot(WorldObject lootObj);
     }
 }

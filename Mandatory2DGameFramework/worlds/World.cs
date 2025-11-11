@@ -1,4 +1,5 @@
-﻿using Mandatory2DGameFramework.Models.Cretures;
+﻿using Mandatory2DGameFramework.Logger;
+using Mandatory2DGameFramework.Models.Creatures;
 
 namespace Mandatory2DGameFramework.worlds
 {
@@ -16,11 +17,15 @@ namespace Mandatory2DGameFramework.worlds
         /// </summary>
         public int MaxY { get; set; }
 
+        /// <summary>
+        /// Gets the collection of world objects currently managed by the system.
+        /// </summary>
+        public List<WorldObject> WorldObjects { get; private set; }
+        /// <summary>
+        /// Gets the collection of creatures currently managed by this instance.
+        /// </summary>
+        public List<Creature> Creatures { get; private set; }
 
-        // world objects
-        private List<WorldObject> _worldObjects;
-        // world creatures
-        private List<Creature> _creatures;
 
         /// <summary>
         /// Constructor for World, initializes MaxX and MaxY, and creates empty lists for world objects and creatures.
@@ -31,8 +36,8 @@ namespace Mandatory2DGameFramework.worlds
         {
             MaxX = maxX;
             MaxY = maxY;
-            _worldObjects = new List<WorldObject>();
-            _creatures = new List<Creature>();
+            WorldObjects = new List<WorldObject>();
+            Creatures = new List<Creature>();
         }
 
         /// <summary>

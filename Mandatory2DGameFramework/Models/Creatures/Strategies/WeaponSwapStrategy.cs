@@ -2,7 +2,7 @@
 using Mandatory2DGameFramework.Models.Attack;
 using Mandatory2DGameFramework.worlds;
 
-namespace Mandatory2DGameFramework.Models.Cretures.Strategies
+namespace Mandatory2DGameFramework.Models.Creatures.Strategies
 {
     public class WeaponSwapStrategy : ILootStrategy
     {
