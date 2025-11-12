@@ -1,25 +1,77 @@
 \doxysection{Mandatory2\+DGame\+Framework.\+worlds.\+World Class Reference}
 \hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world}{}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world}\index{Mandatory2DGameFramework.worlds.World@{Mandatory2DGameFramework.worlds.World}}
+
+
+Represents a world with defined boundaries and collections of objects and creatures.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a6b616d399638fe02ab1a10b65afade79}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a6b616d399638fe02ab1a10b65afade79} 
-{\bfseries World} (int maxX, int maxY)
-\item 
-\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0058e208eaf3f7e2fb61e25b66730914}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0058e208eaf3f7e2fb61e25b66730914} 
-override string {\bfseries To\+String} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a6b616d399638fe02ab1a10b65afade79}{World}} (int maxX, int maxY)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world}{World}, initializes MaxX and MaxY, and creates empty lists for world objects and creatures. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0058e208eaf3f7e2fb61e25b66730914}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the object, including the values of the \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0b1ad1e842a47530036cb945367b8465}{MaxX} and \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a448ca41211652392fcc724b3f06427d7}{MaxY} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0b1ad1e842a47530036cb945367b8465}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0b1ad1e842a47530036cb945367b8465} 
 int {\bfseries MaxX}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum X-\/coordinate value. \end{DoxyCompactList}\item 
 \Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a448ca41211652392fcc724b3f06427d7}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a448ca41211652392fcc724b3f06427d7} 
 int {\bfseries MaxY}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum Y-\/coordinate value. \end{DoxyCompactList}\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a15f4c58e1c834bc706171a4f0562c96c}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a15f4c58e1c834bc706171a4f0562c96c} 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}} $>$ {\bfseries World\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the collection of world objects currently managed by the system. \end{DoxyCompactList}\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_ab551c3b3916692f20697436f53adebec}\label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_ab551c3b3916692f20697436f53adebec} 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}{Creature}} $>$ {\bfseries Creatures}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the collection of creatures currently managed by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a world with defined boundaries and collections of objects and creatures. 
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a6b616d399638fe02ab1a10b65afade79}\index{Mandatory2DGameFramework.worlds.World@{Mandatory2DGameFramework.worlds.World}!World@{World}}
+\index{World@{World}!Mandatory2DGameFramework.worlds.World@{Mandatory2DGameFramework.worlds.World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a6b616d399638fe02ab1a10b65afade79} 
+Mandatory2\+DGame\+Framework.\+worlds.\+World.\+World (\begin{DoxyParamCaption}\item[{int}]{maxX}{, }\item[{int}]{maxY}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world}{World}, initializes MaxX and MaxY, and creates empty lists for world objects and creatures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maxX} & \\
+\hline
+{\em maxY} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0058e208eaf3f7e2fb61e25b66730914}\index{Mandatory2DGameFramework.worlds.World@{Mandatory2DGameFramework.worlds.World}!ToString@{ToString}}
+\index{ToString@{ToString}!Mandatory2DGameFramework.worlds.World@{Mandatory2DGameFramework.worlds.World}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0058e208eaf3f7e2fb61e25b66730914} 
+override string Mandatory2\+DGame\+Framework.\+worlds.\+World.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of the object, including the values of the \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a0b1ad1e842a47530036cb945367b8465}{MaxX} and \doxylink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_a448ca41211652392fcc724b3f06427d7}{MaxY} properties. 
+
+\begin{DoxyReturn}{Returns}
+A string in the format "{}\{\+Max\+X=value, Max\+Y=value\}"{}, where "{}value"{} represents the respective property values.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/papri/\+One\+Drive -\/ Zealand/\+Skrivebord/\+Skole/\+Advanced\+Software\+Const/\+Mandatory2\+DGame\+Framework/\+Mandatory2\+DGame\+Framework/worlds/World.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/papri/\+One\+Drive -\/ Zealand/\+Skrivebord/\+Skole/\+Advanced\+Software\+Const/\+Mandatory2\+DGame\+Framework/\+Mandatory2\+DGame\+Framework/\+Worlds/World.\+cs\end{DoxyCompactItemize}

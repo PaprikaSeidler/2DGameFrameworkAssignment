@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework: Mandatory2DGameFramework.worlds.XMLWorld Class Reference</title>
+<title>2DGameFramework: Mandatory2DGameFramework.worlds.XMLWorld Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GameFramework
+   <div id="projectname">2DGameFramework
    </div>
   </td>
  </tr>
@@ -94,20 +94,55 @@ $(function(){initNavTree('class_mandatory2_d_game_framework_1_1worlds_1_1_x_m_l_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6bdf674114348ec73b799900c9b64bdd" id="r_a6bdf674114348ec73b799900c9b64bdd"><td class="memItemLeft" align="right" valign="top"><a id="a6bdf674114348ec73b799900c9b64bdd" name="a6bdf674114348ec73b799900c9b64bdd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>XMLWorld</b> (string configFilePath)</td></tr>
+<tr class="memitem:a6bdf674114348ec73b799900c9b64bdd" id="r_a6bdf674114348ec73b799900c9b64bdd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bdf674114348ec73b799900c9b64bdd">XMLWorld</a> (string configFilePath)</td></tr>
+<tr class="memdesc:a6bdf674114348ec73b799900c9b64bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads world configuration from an XML file and initializes properties. If any required node is missing, logs an error and throws an exception.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a8cdf8f4f28501d95952615fa986cf6e2" id="r_a8cdf8f4f28501d95952615fa986cf6e2"><td class="memItemLeft" align="right" valign="top"><a id="a8cdf8f4f28501d95952615fa986cf6e2" name="a8cdf8f4f28501d95952615fa986cf6e2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>MaxX</b><code> [get]</code></td></tr>
+<tr class="memdesc:a8cdf8f4f28501d95952615fa986cf6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum X-coordinate value from XML. <br /></td></tr>
 <tr class="memitem:a713a147adb2ff0ad7da2adc86075fb44" id="r_a713a147adb2ff0ad7da2adc86075fb44"><td class="memItemLeft" align="right" valign="top"><a id="a713a147adb2ff0ad7da2adc86075fb44" name="a713a147adb2ff0ad7da2adc86075fb44"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>MaxY</b><code> [get]</code></td></tr>
+<tr class="memdesc:a713a147adb2ff0ad7da2adc86075fb44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum Y-coordinate value from XML. <br /></td></tr>
 <tr class="memitem:a36fab8adccb590ce809089b4bcdfa8ec" id="r_a36fab8adccb590ce809089b4bcdfa8ec"><td class="memItemLeft" align="right" valign="top"><a id="a36fab8adccb590ce809089b4bcdfa8ec" name="a36fab8adccb590ce809089b4bcdfa8ec"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>Difficulty</b><code> [get]</code></td></tr>
+<tr class="memdesc:a36fab8adccb590ce809089b4bcdfa8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the difficulty level of the current context from XML. <br /></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6bdf674114348ec73b799900c9b64bdd" name="a6bdf674114348ec73b799900c9b64bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bdf674114348ec73b799900c9b64bdd">&#9670;&#160;</a></span>XMLWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mandatory2DGameFramework.worlds.XMLWorld.XMLWorld </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>configFilePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads world configuration from an XML file and initializes properties. If any required node is missing, logs an error and throws an exception. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configFilePath</td><td>Your filepath</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/papri/OneDrive - Zealand/Skrivebord/Skole/AdvancedSoftwareConst/Mandatory2DGameFramework/Mandatory2DGameFramework/worlds/<b>XMLWorld.cs</b></li>
+<li>C:/Users/papri/OneDrive - Zealand/Skrivebord/Skole/AdvancedSoftwareConst/Mandatory2DGameFramework/Mandatory2DGameFramework/Worlds/<b>XMLWorld.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

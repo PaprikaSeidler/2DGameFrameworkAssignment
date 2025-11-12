@@ -5,13 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageId>PapSeiFrameworkTest</PackageId>
-    <Title>PapSeiFrameworkTest</Title>
-    <Description>test</Description>
+    <PackageId>PapSeiFramework</PackageId>
+    <Title>PapSeiFramework</Title>
+    <Description>2D game framework</Description>
     <PackageTags>papsei</PackageTags>
-    <PackageReleaseNotes>tester</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <PackageReadmeFile>readMe.md</PackageReadmeFile>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>0.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Documentation\" />
   </ItemGroup>
 
 </Project>

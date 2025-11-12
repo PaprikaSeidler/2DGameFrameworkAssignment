@@ -1,0 +1,126 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}{}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}\index{Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}}
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.595442cm]{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a991a7ef73febb7f6585527c0efa7f061}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a991a7ef73febb7f6585527c0efa7f061} 
+{\bfseries Creature} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_observer_1_1_hit_notifier}{Hit\+Notifier}} notifier)
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a28e07078fbc243f10d60f15bb37adbb4}{Take\+Turn}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}{Creature}}? opponent=null, \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}}? loot\+Obj=null)
+\begin{DoxyCompactList}\small\item\em Take turn for the creature. \end{DoxyCompactList}\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a3df4f8503807575975fbf3b7a20f50a5}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a3df4f8503807575975fbf3b7a20f50a5} 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{Mandatory2\+DGame\+Framework.\+worlds.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_creature}{Mandatory2\+DGame\+Framework.\+Interfaces.\+ICreature}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Take\+Turn} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_creature}{ICreature}}? opponent=null, \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}}? loot\+Obj=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a65e9ec0e54ebfeec8a172438271ae213}{Hit}} ()
+\item 
+virtual void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a433e40161caca15fec850d8aced2a0cf}{Receive\+Hit}} (int hit)
+\item 
+virtual void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a6554c3946166afa51f60dfa3fa0b2641}{Loot}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}} obj)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a88bdf468e5c38a49de6612cb6f0ca8d4}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a88bdf468e5c38a49de6612cb6f0ca8d4} 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a6f3fc00260b52b49674689f7f17eb5bb}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a6f3fc00260b52b49674689f7f17eb5bb} 
+int {\bfseries Hit\+Point}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a1357fe4e130f9231e5123cd273515259}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a1357fe4e130f9231e5123cd273515259} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attack_item}{IAttack\+Item}}? {\bfseries Weapon}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a0d8b800e03c858b94f3937945f1c2fe3}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a0d8b800e03c858b94f3937945f1c2fe3} 
+List$<$ \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} $>$ {\bfseries Defence}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a8633fd01471b88a237eaa4adcd55253f}\label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a8633fd01471b88a237eaa4adcd55253f} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_loot_strategy}{ILoot\+Strategy}}? {\bfseries Loot\+Strategy}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{Mandatory2\+DGame\+Framework.\+worlds.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+bool {\bfseries Lootable}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+bool {\bfseries Removeable}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int {\bfseries X}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int {\bfseries Y}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a65e9ec0e54ebfeec8a172438271ae213}\index{Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}!Hit@{Hit}}
+\index{Hit@{Hit}!Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}}
+\doxysubsubsection{\texorpdfstring{Hit()}{Hit()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a65e9ec0e54ebfeec8a172438271ae213} 
+int Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature.\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_creature}{Mandatory2\+DGame\+Framework.\+Interfaces.\+ICreature}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a6554c3946166afa51f60dfa3fa0b2641}\index{Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}!Loot@{Loot}}
+\index{Loot@{Loot}!Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}}
+\doxysubsubsection{\texorpdfstring{Loot()}{Loot()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a6554c3946166afa51f60dfa3fa0b2641} 
+virtual void Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature.\+Loot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_creature}{Mandatory2\+DGame\+Framework.\+Interfaces.\+ICreature}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a433e40161caca15fec850d8aced2a0cf}\index{Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}!ReceiveHit@{ReceiveHit}}
+\index{ReceiveHit@{ReceiveHit}!Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}}
+\doxysubsubsection{\texorpdfstring{ReceiveHit()}{ReceiveHit()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a433e40161caca15fec850d8aced2a0cf} 
+virtual void Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature.\+Receive\+Hit (\begin{DoxyParamCaption}\item[{int}]{hit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_creature}{Mandatory2\+DGame\+Framework.\+Interfaces.\+ICreature}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a28e07078fbc243f10d60f15bb37adbb4}\index{Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}!TakeTurn@{TakeTurn}}
+\index{TakeTurn@{TakeTurn}!Mandatory2DGameFramework.Models.Creatures.Creature@{Mandatory2DGameFramework.Models.Creatures.Creature}}
+\doxysubsubsection{\texorpdfstring{TakeTurn()}{TakeTurn()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature_a28e07078fbc243f10d60f15bb37adbb4} 
+void Mandatory2\+DGame\+Framework.\+Models.\+Creatures.\+Creature.\+Take\+Turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature}{Creature}}?}]{opponent}{ = {\ttfamily null}, }\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1worlds_1_1_world_object}{World\+Object}}?}]{loot\+Obj}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Take turn for the creature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opponent} & deal damage to this creature\\
+\hline
+{\em loot\+Obj} & loot this object\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/papri/\+One\+Drive -\/ Zealand/\+Skrivebord/\+Skole/\+Advanced\+Software\+Const/\+Mandatory2\+DGame\+Framework/\+Mandatory2\+DGame\+Framework/\+Models/\+Creatures/Creature.\+cs\end{DoxyCompactItemize}

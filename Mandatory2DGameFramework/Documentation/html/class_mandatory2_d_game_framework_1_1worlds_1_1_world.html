@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework: Mandatory2DGameFramework.worlds.World Class Reference</title>
+<title>2DGameFramework: Mandatory2DGameFramework.worlds.World Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GameFramework
+   <div id="projectname">2DGameFramework
    </div>
   </td>
  </tr>
@@ -91,23 +91,88 @@ $(function(){initNavTree('class_mandatory2_d_game_framework_1_1worlds_1_1_world.
   <div class="headertitle"><div class="title">Mandatory2DGameFramework.worlds.World Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a world with defined boundaries and collections of objects and creatures.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6b616d399638fe02ab1a10b65afade79" id="r_a6b616d399638fe02ab1a10b65afade79"><td class="memItemLeft" align="right" valign="top"><a id="a6b616d399638fe02ab1a10b65afade79" name="a6b616d399638fe02ab1a10b65afade79"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>World</b> (int maxX, int maxY)</td></tr>
-<tr class="memitem:a0058e208eaf3f7e2fb61e25b66730914" id="r_a0058e208eaf3f7e2fb61e25b66730914"><td class="memItemLeft" align="right" valign="top"><a id="a0058e208eaf3f7e2fb61e25b66730914" name="a0058e208eaf3f7e2fb61e25b66730914"></a>
-override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr class="memitem:a6b616d399638fe02ab1a10b65afade79" id="r_a6b616d399638fe02ab1a10b65afade79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b616d399638fe02ab1a10b65afade79">World</a> (int maxX, int maxY)</td></tr>
+<tr class="memdesc:a6b616d399638fe02ab1a10b65afade79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_mandatory2_d_game_framework_1_1worlds_1_1_world.html" title="Represents a world with defined boundaries and collections of objects and creatures.">World</a>, initializes MaxX and MaxY, and creates empty lists for world objects and creatures.  <br /></td></tr>
+<tr class="memitem:a0058e208eaf3f7e2fb61e25b66730914" id="r_a0058e208eaf3f7e2fb61e25b66730914"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0058e208eaf3f7e2fb61e25b66730914">ToString</a> ()</td></tr>
+<tr class="memdesc:a0058e208eaf3f7e2fb61e25b66730914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of the object, including the values of the <a class="el" href="#a0b1ad1e842a47530036cb945367b8465" title="Gets or sets the maximum X-coordinate value.">MaxX</a> and <a class="el" href="#a448ca41211652392fcc724b3f06427d7" title="Gets or sets the maximum Y-coordinate value.">MaxY</a> properties.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a0b1ad1e842a47530036cb945367b8465" id="r_a0b1ad1e842a47530036cb945367b8465"><td class="memItemLeft" align="right" valign="top"><a id="a0b1ad1e842a47530036cb945367b8465" name="a0b1ad1e842a47530036cb945367b8465"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>MaxX</b><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0b1ad1e842a47530036cb945367b8465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum X-coordinate value. <br /></td></tr>
 <tr class="memitem:a448ca41211652392fcc724b3f06427d7" id="r_a448ca41211652392fcc724b3f06427d7"><td class="memItemLeft" align="right" valign="top"><a id="a448ca41211652392fcc724b3f06427d7" name="a448ca41211652392fcc724b3f06427d7"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>MaxY</b><code> [get, set]</code></td></tr>
+<tr class="memdesc:a448ca41211652392fcc724b3f06427d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum Y-coordinate value. <br /></td></tr>
+<tr class="memitem:a15f4c58e1c834bc706171a4f0562c96c" id="r_a15f4c58e1c834bc706171a4f0562c96c"><td class="memItemLeft" align="right" valign="top"><a id="a15f4c58e1c834bc706171a4f0562c96c" name="a15f4c58e1c834bc706171a4f0562c96c"></a>
+List&lt; <a class="el" href="class_mandatory2_d_game_framework_1_1worlds_1_1_world_object.html">WorldObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>WorldObjects</b><code> [get]</code></td></tr>
+<tr class="memdesc:a15f4c58e1c834bc706171a4f0562c96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collection of world objects currently managed by the system. <br /></td></tr>
+<tr class="memitem:ab551c3b3916692f20697436f53adebec" id="r_ab551c3b3916692f20697436f53adebec"><td class="memItemLeft" align="right" valign="top"><a id="ab551c3b3916692f20697436f53adebec" name="ab551c3b3916692f20697436f53adebec"></a>
+List&lt; <a class="el" href="class_mandatory2_d_game_framework_1_1_models_1_1_creatures_1_1_creature.html">Creature</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Creatures</b><code> [get]</code></td></tr>
+<tr class="memdesc:ab551c3b3916692f20697436f53adebec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collection of creatures currently managed by this instance. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a world with defined boundaries and collections of objects and creatures. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6b616d399638fe02ab1a10b65afade79" name="a6b616d399638fe02ab1a10b65afade79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b616d399638fe02ab1a10b65afade79">&#9670;&#160;</a></span>World()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mandatory2DGameFramework.worlds.World.World </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxY</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="class_mandatory2_d_game_framework_1_1worlds_1_1_world.html" title="Represents a world with defined boundaries and collections of objects and creatures.">World</a>, initializes MaxX and MaxY, and creates empty lists for world objects and creatures. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxX</td><td></td></tr>
+    <tr><td class="paramname">maxY</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0058e208eaf3f7e2fb61e25b66730914" name="a0058e208eaf3f7e2fb61e25b66730914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0058e208eaf3f7e2fb61e25b66730914">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Mandatory2DGameFramework.worlds.World.ToString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a string representation of the object, including the values of the <a class="el" href="#a0b1ad1e842a47530036cb945367b8465" title="Gets or sets the maximum X-coordinate value.">MaxX</a> and <a class="el" href="#a448ca41211652392fcc724b3f06427d7" title="Gets or sets the maximum Y-coordinate value.">MaxY</a> properties. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string in the format "{MaxX=value, MaxY=value}", where "value" represents the respective property values.</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/papri/OneDrive - Zealand/Skrivebord/Skole/AdvancedSoftwareConst/Mandatory2DGameFramework/Mandatory2DGameFramework/worlds/<b>World.cs</b></li>
+<li>C:/Users/papri/OneDrive - Zealand/Skrivebord/Skole/AdvancedSoftwareConst/Mandatory2DGameFramework/Mandatory2DGameFramework/Worlds/<b>World.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

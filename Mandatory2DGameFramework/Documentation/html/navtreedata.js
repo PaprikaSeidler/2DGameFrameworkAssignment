@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "GameFramework", "index.html", [
+  [ "2DGameFramework", "index.html", [
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -34,7 +34,8 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ]
   ] ]

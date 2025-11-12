@@ -1,12 +1,10 @@
-﻿using Mandatory2DGameFramework.worlds;
+﻿using Mandatory2DGameFramework.Models.Creatures;
+using Mandatory2DGameFramework.worlds;
 
 namespace Mandatory2DGameFramework.Interfaces
 {
     public interface ICreature
     {
-        void TakeTurn(ICreature? opponent = null, WorldObject? lootObj = null);
-        int Hit();
-        void ReceiveHit(int hit);
-        void Loot(WorldObject lootObj);
+        void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null);
     }
 }
