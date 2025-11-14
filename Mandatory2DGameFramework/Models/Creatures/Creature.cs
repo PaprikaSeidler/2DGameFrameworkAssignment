@@ -2,14 +2,14 @@
 using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.Models.Attack;
 using Mandatory2DGameFramework.Models.Creatures.Observer;
-using Mandatory2DGameFramework.worlds;
+using Mandatory2DGameFramework.Worlds;
 
 
 namespace Mandatory2DGameFramework.Models.Creatures
 {
     public abstract class Creature : WorldObject, ICreature
     {
-        private readonly HitNotifier _notifier;
+        private readonly HitNotifier _notifier = new();
 
         public string Name { get; set; }
         public int HitPoint { get; set; }
@@ -21,23 +21,15 @@ namespace Mandatory2DGameFramework.Models.Creatures
 
         public ILootStrategy? LootStrategy { get; set; }
 
-        public Creature(HitNotifier notifier)
+        public Creature()
         {
             Name = string.Empty;
             HitPoint = 100; 
 
             Defence = new List<IDefenceItem>();
             Weapon = new Unarmed(); // default weapon
-
-            _notifier = notifier;
         }
 
-
-        /// <summary>
-        /// Take turn for the creature
-        /// </summary> 
-        /// <param name="opponent">deal damage to this creature</param>
-        /// <param name="lootObj">loot this object</param>
         public void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null)
         {
             int damage = Hit();
@@ -69,8 +61,11 @@ namespace Mandatory2DGameFramework.Models.Creatures
         {
             LootStrategy?.Loot(this, obj);
         }
-        
-        
+
+        public void AddHitObserver(IHitObserver observer) => _notifier.AddObserver(observer);
+        public void RemoveHitObserver(IHitObserver observer) => _notifier.RemoveObserver(observer);
+
+
         public override string ToString()
         {
             return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";

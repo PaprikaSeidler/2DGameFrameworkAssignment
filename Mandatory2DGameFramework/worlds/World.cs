@@ -1,12 +1,14 @@
-﻿using Mandatory2DGameFramework.Logger;
+﻿using Mandatory2DGameFramework.Interfaces;
+using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.Models.Creatures;
+using Mandatory2DGameFramework.Worlds;
 
-namespace Mandatory2DGameFramework.worlds
+namespace Mandatory2DGameFramework.Worlds
 {
     /// <summary>
     /// Represents a world with defined boundaries and collections of objects and creatures.
     /// </summary>
-    public class World
+    public class World : IWorld
     {
         /// <summary>
         /// Gets or sets the maximum X-coordinate value.
@@ -16,6 +18,11 @@ namespace Mandatory2DGameFramework.worlds
         /// Gets or sets the maximum Y-coordinate value.
         /// </summary>
         public int MaxY { get; set; }
+
+        /// <summary>
+        /// Gets the difficulty level of the current context.
+        /// </summary>
+        public string Difficulty { get; private set; }
 
         /// <summary>
         /// Gets the collection of world objects currently managed by the system.
@@ -32,10 +39,12 @@ namespace Mandatory2DGameFramework.worlds
         /// </summary>
         /// <param name="maxX"></param>
         /// <param name="maxY"></param>
-        public World(int maxX, int maxY)
+        /// <param name="difficulty"></param>
+        public World(int maxX, int maxY, string difficulty)
         {
             MaxX = maxX;
             MaxY = maxY;
+            Difficulty = difficulty;
             WorldObjects = new List<WorldObject>();
             Creatures = new List<Creature>();
         }
@@ -47,7 +56,7 @@ namespace Mandatory2DGameFramework.worlds
         /// <returns>A string in the format "{MaxX=value, MaxY=value}", where "value" represents the respective property values.</returns>
         public override string ToString()
         {
-            return $"{{{nameof(MaxX)}={MaxX.ToString()}, {nameof(MaxY)}={MaxY.ToString()}}}";
+            return $"{{{nameof(MaxX)}={MaxX.ToString()}, {nameof(MaxY)}={MaxY.ToString()}, Difficulty={Difficulty}}}";
         }
     }
 }

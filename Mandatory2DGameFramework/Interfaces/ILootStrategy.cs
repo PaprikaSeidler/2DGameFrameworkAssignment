@@ -1,5 +1,5 @@
 ﻿using Mandatory2DGameFramework.Models.Creatures;
-using Mandatory2DGameFramework.worlds;
+using Mandatory2DGameFramework.Worlds;
 
 namespace Mandatory2DGameFramework.Interfaces
 {

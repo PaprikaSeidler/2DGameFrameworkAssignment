@@ -1,9 +1,10 @@
 ﻿using Mandatory2DGameFramework.Logger;
+using Mandatory2DGameFramework.Interfaces;
 using System.Xml;
 
-namespace Mandatory2DGameFramework.worlds
+namespace Mandatory2DGameFramework.Worlds
 {
-    public class XMLWorld
+    public class WorldConfig : IWorld
     {
         /// <summary>
         /// Gets the maximum X-coordinate value from XML.
@@ -24,7 +25,7 @@ namespace Mandatory2DGameFramework.worlds
         /// </summary>
         /// <param name="configFilePath">Your filepath</param>
         /// <exception cref="Exception"></exception>
-        public XMLWorld(string configFilePath)
+        public WorldConfig(string configFilePath)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(configFilePath);
@@ -64,5 +65,7 @@ namespace Mandatory2DGameFramework.worlds
             }
 
         }
+
+        public IWorld ToWorld() => new World(MaxX, MaxY, Difficulty);
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace Mandatory2DGameFramework.worlds
+namespace Mandatory2DGameFramework.Worlds
 {
     public class WorldObject
     {

@@ -1,5 +1,5 @@
 ﻿using Mandatory2DGameFramework.Interfaces;
-using Mandatory2DGameFramework.worlds;
+using Mandatory2DGameFramework.Worlds;
 
 namespace Mandatory2DGameFramework.Models.Attack
 {
