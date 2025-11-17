@@ -2,6 +2,8 @@
 using Mandatory2DGameFramework.Logger;
 using Mandatory2DGameFramework.Models.Attack;
 using Mandatory2DGameFramework.Models.Creatures.Observer;
+using Mandatory2DGameFramework.Models.defence;
+using Mandatory2DGameFramework.Models.Defence;
 using Mandatory2DGameFramework.Worlds;
 
 
@@ -17,7 +19,9 @@ namespace Mandatory2DGameFramework.Models.Creatures
 
         // allow multiple defence items but only one attack item
         public IAttackItem? Weapon { get; set; }
-        public List<IDefenceItem> Defence { get; set; }
+
+        //public List<IDefenceItem> Defence { get; set; }
+        public DefenceItemComposite Defence { get; } = new DefenceItemComposite();
 
         public ILootStrategy? LootStrategy { get; set; }
 
@@ -26,8 +30,8 @@ namespace Mandatory2DGameFramework.Models.Creatures
             Name = string.Empty;
             HitPoint = 100; 
 
-            Defence = new List<IDefenceItem>();
-            Weapon = new Unarmed(); // default weapon
+            this.Defence = Defence;
+            Weapon = null; // no weapon by default
         }
 
         public void TakeTurn(Creature? opponent = null, WorldObject? lootObj = null)
@@ -47,7 +51,8 @@ namespace Mandatory2DGameFramework.Models.Creatures
 
         protected virtual void ReceiveHit(int hit)
         {
-            int totalDefence = Defence.Sum(d => d.GetReduceHitPoint());
+            //int totalDefence = Defence.Sum(d => d.GetReduceHitPoint());
+            int totalDefence = Defence.GetReduceHitPoint();
             int totalDamage = Math.Max(0, hit - totalDefence);
             HitPoint -= totalDamage;
             if (HitPoint <= 0)
@@ -68,8 +73,7 @@ namespace Mandatory2DGameFramework.Models.Creatures
 
         public override string ToString()
         {
-            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence}}}";
+            return $"{{{nameof(Name)}={Name}, {nameof(HitPoint)}={HitPoint.ToString()}, {nameof(Weapon)}={Weapon}, {nameof(Defence)}={Defence.ToString()}}}";
         }
-
     }
 }

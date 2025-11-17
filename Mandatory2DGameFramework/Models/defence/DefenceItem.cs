@@ -20,6 +20,7 @@ namespace Mandatory2DGameFramework.Models.defence
         {
             Name = string.Empty;
             ReduceHitPoint = 0;
+            Lootable = true;
         }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace Mandatory2DGameFramework.Models.Attack
             Name = string.Empty;
             Hit = 0;
             Range = 0;
+            Lootable = true;
         }
 
         public override string ToString()

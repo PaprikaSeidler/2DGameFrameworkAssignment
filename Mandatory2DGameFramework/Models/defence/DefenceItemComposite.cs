@@ -22,5 +22,10 @@ namespace Mandatory2DGameFramework.Models.defence
             return _defenceItems.Sum(item => item.GetReduceHitPoint());
         }
 
+        public override string ToString()
+        {
+            return $"DefenceItemComposite: Total Defence = {GetReduceHitPoint()}";
+        }
+
     }
 }
